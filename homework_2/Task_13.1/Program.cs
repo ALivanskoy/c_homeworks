@@ -4,9 +4,9 @@
 // 32679 -> 6
 
 Console.Write("Введите число: ");
-int num = Convert.ToInt32(Console.ReadLine());
+int num = Math.Abs(Convert.ToInt32(Console.ReadLine()));
 
-if (num < 100) Console.WriteLine("Введённое число не имеет третьей цифры");
+if (num < 99) Console.WriteLine("Введённое число не имеет третьей цифры");
 else
 {
     while (num > 1000) num = num / 10;
