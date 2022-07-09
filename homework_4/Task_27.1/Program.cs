@@ -7,12 +7,11 @@ int NumberSum(int inputNum)
 {
     int sum = 0;
     inputNum = Math.Abs(inputNum);
-    while (inputNum > 10)
+    while (inputNum >= 0)
     {
         sum += inputNum % 10;
         inputNum /= 10;
     }
-    sum += inputNum;
     return sum;
 }
 
