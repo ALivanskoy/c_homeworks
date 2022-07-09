@@ -27,20 +27,34 @@ void ArrayPrint(int[] array)
 int[] ArrayStrangeMult(int[] array)
 {
     int size = 0;
-    if (array.Length % 2 == 0) size = array.Length / 2;
-    if (array.Length % 2 != 0) size = array.Length / 2 + 1;
-    int[] multArray = new int[size];
-
-    for (int index = 0; index < multArray.Length; index++)
+    if (array.Length % 2 == 0)
     {
-        if (index < multArray.Length - 1) multArray[index] = array[index] * array[array.Length - 1 - index];
-        else multArray[index] = array[index];
+        size = array.Length / 2;
+        int[] multArray = new int[size];
+        for (int index = 0; index < multArray.Length; index++)
+        {
+            multArray[index] = array[index] * array[array.Length - 1 - index];
+        }
+        return multArray;
     }
-    return multArray;
+    if (array.Length % 2 != 0)
+    {
+        size = array.Length / 2 + 1;
+        int[] multArray = new int[size];
+        for (int index = 0; index < multArray.Length; index++)
+        {
+            if (index < multArray.Length - 1) multArray[index] = array[index] * array[array.Length - 1 - index];
+            else multArray[index] = array[index];
+        }
+        return multArray;
+    }
+    return array;
 }
 
-int[] array = new int[5];
 
-ArrayFill(array, 1, 5);
+
+
+int[] array = new int[5];
+ArrayFill(array, 1, 9);
 ArrayPrint(array);
 ArrayPrint(ArrayStrangeMult(array));
